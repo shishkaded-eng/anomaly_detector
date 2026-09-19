@@ -1,0 +1,11 @@
+{
+  "total_events": 1280,
+  "anomalies_detected": 251,
+  "anomaly_percentage": 19.609375,
+  "algorithm_statistics": {
+    "isolation_forest": 128,
+    "lof": 105,
+    "one_class_svm": 126
+  },
+  "timestamp": "2025-12-22T18:29:58.831086"
+}

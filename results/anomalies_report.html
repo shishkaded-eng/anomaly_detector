@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отчёт о выявленных аномалиях</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        .stat-label {
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .anomaly-row {
+            background-color: #fee;
+        }
+        .timestamp {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Отчёт о выявленных аномалиях в логах безопасности</h1>
+        <p class="timestamp">Дата генерации: 2025-12-22 18:29:58</p>
+        
+        <h2>Общая статистика</h2>
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value">1280</div>
+                <div class="stat-label">Всего событий</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">251</div>
+                <div class="stat-label">Выявлено аномалий</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">19.61%</div>
+                <div class="stat-label">Процент аномалий</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">1029</div>
+                <div class="stat-label">Нормальных событий</div>
+            </div>
+        </div>
+
+        <h2>Результаты алгоритмов детекции</h2>
+        <table>
+            <tr>
+                <th>Алгоритм</th>
+                <th>Количество аномалий</th>
+            </tr>
+
+            <tr>
+                <td>Isolation Forest</td>
+                <td>128</td>
+            </tr>
+
+            <tr>
+                <td>Lof</td>
+                <td>105</td>
+            </tr>
+
+            <tr>
+                <td>One Class Svm</td>
+                <td>126</td>
+            </tr>
+
+        </table>
+
+        <h2>Топ-10 подозрительных IP-адресов</h2>
+        <table>
+            <tr>
+                <th>IP-адрес</th>
+                <th>Количество аномалий</th>
+            </tr>
+
+            <tr>
+                <td>10.0.0.100</td>
+                <td>50</td>
+            </tr>
+
+            <tr>
+                <td>203.0.113.50</td>
+                <td>30</td>
+            </tr>
+
+            <tr>
+                <td>192.168.1.48</td>
+                <td>22</td>
+            </tr>
+
+            <tr>
+                <td>192.168.1.19</td>
+                <td>15</td>
+            </tr>
+
+            <tr>
+                <td>172.16.0.8</td>
+                <td>13</td>
+            </tr>
+
+            <tr>
+                <td>192.168.1.49</td>
+                <td>7</td>
+            </tr>
+
+            <tr>
+                <td>172.16.0.9</td>
+                <td>7</td>
+            </tr>
+
+            <tr>
+                <td>192.168.1.16</td>
+                <td>6</td>
+            </tr>
+
+            <tr>
+                <td>192.168.1.29</td>
+                <td>6</td>
+            </tr>
+
+            <tr>
+                <td>192.168.1.43</td>
+                <td>6</td>
+            </tr>
+
+        </table>
+
+        <h2>Типы событий с аномалиями</h2>
+        <table>
+            <tr>
+                <th>Тип события</th>
+                <th>Количество аномалий</th>
+            </tr>
+
+            <tr>
+                <td>access</td>
+                <td>87</td>
+            </tr>
+
+            <tr>
+                <td>login</td>
+                <td>72</td>
+            </tr>
+
+            <tr>
+                <td>write</td>
+                <td>37</td>
+            </tr>
+
+            <tr>
+                <td>read</td>
+                <td>20</td>
+            </tr>
+
+            <tr>
+                <td>modify</td>
+                <td>15</td>
+            </tr>
+
+            <tr>
+                <td>logout</td>
+                <td>12</td>
+            </tr>
+
+            <tr>
+                <td>delete</td>
+                <td>8</td>
+            </tr>
+
+        </table>
+
+        <h2>Детальный список аномалий (первые 100)</h2>
+        <table>
+            <tr>
+<th>Timestamp</th><th>Source Ip</th><th>Destination Ip</th><th>Event Type</th><th>User</th><th>Status</th>
+            </tr>
+<tr class="anomaly-row"><td>2025-11-23 00:26:56.539489</td><td>192.168.1.36</td><td>192.168.1.42</td><td>write</td><td>user3</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-23 00:36:56.539489</td><td>192.168.1.34</td><td>192.168.1.10</td><td>write</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-23 00:46:56.539489</td><td>192.168.1.16</td><td>192.168.1.12</td><td>login</td><td>guest</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-23 00:46:56.539489</td><td>192.168.1.25</td><td>192.168.1.34</td><td>access</td><td>guest</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-23 00:47:56.539489</td><td>192.168.1.43</td><td>192.168.1.10</td><td>read</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-23 00:50:56.539489</td><td>192.168.1.49</td><td>192.168.1.29</td><td>write</td><td>admin</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-23 01:36:56.539489</td><td>192.168.1.48</td><td>192.168.1.45</td><td>write</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-23 01:40:56.539489</td><td>192.168.1.29</td><td>192.168.1.18</td><td>access</td><td>user1</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-23 01:57:56.539489</td><td>192.168.1.13</td><td>192.168.1.46</td><td>write</td><td>user2</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-23 02:00:56.539489</td><td>192.168.1.16</td><td>192.168.1.49</td><td>access</td><td>user3</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-23 02:19:56.539489</td><td>192.168.1.45</td><td>192.168.1.26</td><td>write</td><td>user2</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-23 02:24:56.539489</td><td>192.168.1.44</td><td>192.168.1.49</td><td>access</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-23 03:00:56.539489</td><td>192.168.1.47</td><td>192.168.1.40</td><td>access</td><td>user3</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-23 03:28:56.539489</td><td>192.168.1.39</td><td>192.168.1.45</td><td>logout</td><td>user3</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-23 03:29:56.539489</td><td>192.168.1.19</td><td>192.168.1.18</td><td>login</td><td>user2</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-23 03:45:56.539489</td><td>192.168.1.38</td><td>192.168.1.33</td><td>access</td><td>user1</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-23 04:51:56.539489</td><td>192.168.1.19</td><td>192.168.1.28</td><td>access</td><td>user3</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-23 05:03:56.539489</td><td>192.168.1.26</td><td>192.168.1.44</td><td>read</td><td>user3</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-23 05:11:56.539489</td><td>192.168.1.43</td><td>192.168.1.16</td><td>access</td><td>admin</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-23 05:34:56.539489</td><td>192.168.1.35</td><td>192.168.1.35</td><td>read</td><td>guest</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-23 05:58:56.539489</td><td>192.168.1.22</td><td>192.168.1.45</td><td>login</td><td>user3</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-23 06:06:56.539489</td><td>192.168.1.41</td><td>192.168.1.40</td><td>access</td><td>guest</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-23 06:14:56.539489</td><td>192.168.1.19</td><td>192.168.1.38</td><td>write</td><td>user3</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-23 06:25:56.539489</td><td>192.168.1.48</td><td>192.168.1.17</td><td>logout</td><td>user1</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-23 07:28:56.539489</td><td>192.168.1.43</td><td>192.168.1.42</td><td>write</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-23 07:44:56.539489</td><td>192.168.1.23</td><td>192.168.1.33</td><td>access</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-23 08:02:56.539489</td><td>192.168.1.14</td><td>192.168.1.15</td><td>write</td><td>user2</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-23 08:12:56.539489</td><td>192.168.1.19</td><td>192.168.1.40</td><td>read</td><td>user1</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-23 08:21:56.539489</td><td>192.168.1.46</td><td>192.168.1.40</td><td>access</td><td>admin</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-23 08:33:56.539489</td><td>192.168.1.45</td><td>192.168.1.18</td><td>write</td><td>guest</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-23 08:35:56.539489</td><td>192.168.1.11</td><td>192.168.1.16</td><td>access</td><td>user2</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-23 08:45:56.539489</td><td>192.168.1.30</td><td>192.168.1.46</td><td>login</td><td>admin</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-23 09:16:56.539489</td><td>192.168.1.39</td><td>192.168.1.33</td><td>write</td><td>user2</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-23 09:17:56.539489</td><td>192.168.1.17</td><td>192.168.1.43</td><td>access</td><td>user2</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-23 09:18:56.539489</td><td>192.168.1.35</td><td>192.168.1.12</td><td>read</td><td>user2</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-23 09:22:56.539489</td><td>192.168.1.49</td><td>192.168.1.35</td><td>access</td><td>user2</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-24 00:35:56.539489</td><td>192.168.1.19</td><td>192.168.1.30</td><td>read</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-24 00:35:56.539489</td><td>192.168.1.19</td><td>192.168.1.31</td><td>access</td><td>user3</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-24 01:26:56.539489</td><td>192.168.1.22</td><td>192.168.1.41</td><td>access</td><td>user2</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-24 01:32:56.539489</td><td>192.168.1.12</td><td>192.168.1.31</td><td>read</td><td>user2</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-24 01:54:56.539489</td><td>192.168.1.10</td><td>192.168.1.30</td><td>write</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-24 02:59:56.539489</td><td>192.168.1.41</td><td>192.168.1.26</td><td>write</td><td>admin</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-24 03:17:56.539489</td><td>192.168.1.19</td><td>192.168.1.27</td><td>write</td><td>user1</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-24 03:28:56.539489</td><td>192.168.1.49</td><td>192.168.1.48</td><td>access</td><td>guest</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-24 04:01:56.539489</td><td>192.168.1.10</td><td>192.168.1.15</td><td>access</td><td>user2</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-24 04:52:56.539489</td><td>192.168.1.48</td><td>192.168.1.10</td><td>write</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-24 05:12:56.539489</td><td>192.168.1.48</td><td>192.168.1.25</td><td>login</td><td>user1</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-24 05:16:56.539489</td><td>192.168.1.29</td><td>192.168.1.48</td><td>access</td><td>admin</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-24 05:25:56.539489</td><td>192.168.1.19</td><td>192.168.1.33</td><td>read</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-24 05:51:56.539489</td><td>192.168.1.37</td><td>192.168.1.31</td><td>login</td><td>user2</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-24 06:20:56.539489</td><td>192.168.1.23</td><td>192.168.1.12</td><td>login</td><td>admin</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-24 06:28:56.539489</td><td>192.168.1.12</td><td>192.168.1.49</td><td>write</td><td>user2</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-24 06:35:56.539489</td><td>192.168.1.16</td><td>192.168.1.35</td><td>access</td><td>user2</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-24 07:30:56.539489</td><td>192.168.1.17</td><td>192.168.1.14</td><td>write</td><td>admin</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-24 07:30:56.539489</td><td>192.168.1.39</td><td>192.168.1.45</td><td>login</td><td>user2</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-24 07:34:56.539489</td><td>192.168.1.41</td><td>192.168.1.32</td><td>access</td><td>guest</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-24 07:55:56.539489</td><td>192.168.1.23</td><td>192.168.1.10</td><td>login</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-24 08:17:56.539489</td><td>192.168.1.33</td><td>192.168.1.17</td><td>login</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-24 08:54:56.539489</td><td>192.168.1.10</td><td>192.168.1.40</td><td>login</td><td>user1</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-24 08:59:56.539489</td><td>192.168.1.34</td><td>192.168.1.30</td><td>logout</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-24 09:01:56.539489</td><td>192.168.1.35</td><td>192.168.1.43</td><td>access</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-24 09:20:56.539489</td><td>192.168.1.29</td><td>192.168.1.13</td><td>write</td><td>user3</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-25 01:31:56.539489</td><td>192.168.1.41</td><td>192.168.1.37</td><td>read</td><td>user3</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-25 02:44:56.539489</td><td>192.168.1.48</td><td>192.168.1.46</td><td>read</td><td>guest</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-25 03:46:56.539489</td><td>192.168.1.48</td><td>192.168.1.40</td><td>write</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-25 03:48:56.539489</td><td>192.168.1.14</td><td>192.168.1.12</td><td>access</td><td>admin</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-25 05:23:56.539489</td><td>192.168.1.39</td><td>192.168.1.10</td><td>logout</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-25 05:52:56.539489</td><td>192.168.1.48</td><td>192.168.1.20</td><td>access</td><td>user3</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-25 06:02:56.539489</td><td>192.168.1.48</td><td>192.168.1.33</td><td>access</td><td>user1</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-25 06:22:56.539489</td><td>192.168.1.20</td><td>192.168.1.47</td><td>access</td><td>admin</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-25 06:36:56.539489</td><td>192.168.1.19</td><td>192.168.1.46</td><td>read</td><td>user2</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-25 06:50:56.539489</td><td>192.168.1.29</td><td>192.168.1.16</td><td>read</td><td>user1</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-25 06:56:56.539489</td><td>192.168.1.48</td><td>192.168.1.34</td><td>login</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-25 07:13:56.539489</td><td>192.168.1.25</td><td>192.168.1.38</td><td>login</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-25 07:21:56.539489</td><td>192.168.1.16</td><td>192.168.1.26</td><td>write</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-25 08:11:56.539489</td><td>192.168.1.47</td><td>192.168.1.48</td><td>access</td><td>user3</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-25 09:12:56.539489</td><td>192.168.1.49</td><td>192.168.1.48</td><td>access</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-25 09:14:56.539489</td><td>192.168.1.49</td><td>192.168.1.42</td><td>login</td><td>guest</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-25 09:22:56.539489</td><td>192.168.1.48</td><td>192.168.1.10</td><td>logout</td><td>user3</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-26 00:44:56.539489</td><td>192.168.1.48</td><td>192.168.1.33</td><td>access</td><td>user1</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-26 00:46:56.539489</td><td>192.168.1.49</td><td>192.168.1.10</td><td>write</td><td>guest</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-26 00:54:56.539489</td><td>192.168.1.10</td><td>192.168.1.12</td><td>access</td><td>user3</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-26 01:21:56.539489</td><td>192.168.1.49</td><td>192.168.1.13</td><td>logout</td><td>user3</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-26 01:45:56.539489</td><td>192.168.1.48</td><td>192.168.1.45</td><td>access</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-26 05:13:56.539489</td><td>192.168.1.43</td><td>192.168.1.40</td><td>access</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-26 06:13:56.539489</td><td>192.168.1.19</td><td>192.168.1.47</td><td>access</td><td>admin</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-26 07:11:56.539489</td><td>192.168.1.48</td><td>192.168.1.34</td><td>login</td><td>user1</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-26 07:47:56.539489</td><td>192.168.1.39</td><td>192.168.1.39</td><td>logout</td><td>guest</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-26 08:39:56.539489</td><td>192.168.1.14</td><td>192.168.1.43</td><td>read</td><td>guest</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-26 08:39:56.539489</td><td>192.168.1.19</td><td>192.168.1.39</td><td>login</td><td>user2</td><td>success</td></tr><tr class="anomaly-row"><td>2025-11-26 17:26:56.552491</td><td>10.0.0.100</td><td>192.168.1.1</td><td>login</td><td>test</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-26 17:26:58.552491</td><td>10.0.0.100</td><td>192.168.1.1</td><td>login</td><td>admin</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-26 17:27:00.552491</td><td>10.0.0.100</td><td>192.168.1.1</td><td>login</td><td>root</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-26 17:27:02.552491</td><td>10.0.0.100</td><td>192.168.1.1</td><td>login</td><td>user1</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-26 17:27:04.552491</td><td>10.0.0.100</td><td>192.168.1.1</td><td>login</td><td>test</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-26 17:27:06.552491</td><td>10.0.0.100</td><td>192.168.1.1</td><td>login</td><td>admin</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-26 17:27:08.552491</td><td>10.0.0.100</td><td>192.168.1.1</td><td>login</td><td>user1</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-26 17:27:10.552491</td><td>10.0.0.100</td><td>192.168.1.1</td><td>login</td><td>admin</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-26 17:27:12.552491</td><td>10.0.0.100</td><td>192.168.1.1</td><td>login</td><td>test</td><td>failed</td></tr><tr class="anomaly-row"><td>2025-11-26 17:27:14.552491</td><td>10.0.0.100</td><td>192.168.1.1</td><td>login</td><td>root</td><td>failed</td></tr>
+        </table>
+
+        <h2>Рекомендации</h2>
+        <ul>
+            <li>Проверить активность подозрительных IP-адресов из топ-10 списка</li>
+            <li>Исследовать события, произошедшие в нерабочее время</li>
+            <li>Проанализировать типы событий с наибольшим количеством аномалий</li>
+            <li>Настроить правила мониторинга для автоматического обнаружения подобных паттернов</li>
+            <li>Рассмотреть блокировку IP-адресов с множественными аномалиями</li>
+        </ul>
+
+    </div>
+</body>
+</html>
