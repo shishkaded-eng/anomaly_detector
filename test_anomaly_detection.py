@@ -129,3 +129,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     test_anomaly_detection(args.input, args.contamination)
 
+

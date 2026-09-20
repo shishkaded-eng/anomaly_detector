@@ -102,3 +102,4 @@ class LogDataLoader:
         """Возвращает загруженные данные."""
         return self.data
 
+

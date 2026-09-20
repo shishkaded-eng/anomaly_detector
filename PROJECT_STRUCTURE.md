@@ -137,3 +137,4 @@ python test_anomaly_detection.py --input data/test_logs.csv
 - **Accuracy** - общая точность классификации
 - **Specificity** - способность правильно идентифицировать нормальные события
 
+

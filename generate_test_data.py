@@ -226,3 +226,4 @@ if __name__ == '__main__':
     os.makedirs('data', exist_ok=True)
     generate_test_dataset('data/test_logs.csv', n_normal=1000)
 
+
